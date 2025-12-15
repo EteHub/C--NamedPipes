@@ -45,39 +45,42 @@ class Program
     {
         try
         {
-            
-            await using var writer = new StreamWriter(server, Encoding.UTF8) { AutoFlush = true };
+            // Usamos StreamReader y StreamWriter para leer y escribir texto fácilmente.
+            // CAMBIO: Se elimina { AutoFlush = true }
+            await using var writer = new StreamWriter(server, Encoding.UTF8);
             using var reader = new StreamReader(server, Encoding.UTF8);
 
-            
+            // 4. Leer el comando del cliente.
             string? commandFromClient = await reader.ReadLineAsync();
             if (string.IsNullOrEmpty(commandFromClient))
             {
                 Console.WriteLine("El cliente envió un comando vacío.");
                 await writer.WriteLineAsync("ERROR: Comando vacío.");
+                await writer.FlushAsync(); // <-- CAMBIO AÑADIDO
                 return;
             }
 
             Console.WriteLine($"Comando recibido: '{commandFromClient}'");
 
-            
+            // 5. Procesar el comando y obtener la respuesta.
             string response = ProcessCommand(commandFromClient);
 
-            
+            // 6. Enviar la respuesta de vuelta al cliente.
             await writer.WriteLineAsync(response);
+            await writer.FlushAsync(); // <-- CAMBIO AÑADIDO: Forzar el envío de la respuesta.
             Console.WriteLine($"Respuesta enviada: '{response}'");
         }
         catch (Exception ex)
         {
-            
+            // Si algo falla durante la comunicación, lo intentamos notificar al cliente.
             try
             {
-                await using var writer = new StreamWriter(server, Encoding.UTF8) { AutoFlush = true };
+                await using var writer = new StreamWriter(server, Encoding.UTF8);
                 await writer.WriteLineAsync($"ERROR: Fallo interno del servidor - {ex.Message}");
+                await writer.FlushAsync(); // <-- CAMBIO AÑADIDO
             }
             catch
             {
-                
                 Console.WriteLine("No se pudo enviar el error al cliente (probablemente se desconectó).");
             }
         }
@@ -86,24 +89,24 @@ class Program
     {
         try
         {
-            
+
             var parts = command.Split(new[] { ' ' }, 2, StringSplitOptions.RemoveEmptyEntries);
             var action = parts[0].ToLowerInvariant();
             var parameters = parts.Length > 1 ? parts[1] : string.Empty;
 
-            
+
             return action switch
             {
                 "saludar" => $"OK: ¡Hola, {(!string.IsNullOrEmpty(parameters) ? parameters : "mundo")}!",
                 "sumar" => Sumar(parameters),
                 "hora" => $"OK: La hora actual es {DateTime.Now:HH:mm:ss}",
-                "salir" => "OK: Servidor finalizando.", 
+                "salir" => "OK: Servidor finalizando.", // Este comando podría tener una lógica especial en el cliente.
                 _ => $"ERROR: Comando '{action}' no reconocido."
             };
         }
         catch (Exception ex)
         {
-            
+
             return $"ERROR: {ex.Message}";
         }
     }
