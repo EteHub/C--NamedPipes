@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 public class PipeClient
 {
-    private const string PipeName = "CSharpPipe"; // ¡Debe ser el mismo nombre que en el servidor!
+    private const string PipeName = "CSharpPipe"; //? ¡Debe ser el mismo nombre que en el servidor!
 
     public static async Task Main(string[] args)
     {
