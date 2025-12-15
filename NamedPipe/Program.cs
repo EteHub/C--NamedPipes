@@ -101,6 +101,7 @@ class Program
                 "sumar" => Sumar(parameters),
                 "hora" => $"OK: La hora actual es {DateTime.Now:HH:mm:ss}",
                 "salir" => "OK: Servidor finalizando.", // Este comando podría tener una lógica especial en el cliente.
+                "ping" => "OK: Pong!",
                 _ => $"ERROR: Comando '{action}' no reconocido."
             };
         }

@@ -37,10 +37,9 @@ public class PipeClient
                 Console.WriteLine("¡Conectado!");
 
                 // 2. Enviar el comando.
-                // CAMBIO: Se elimina { AutoFlush = true }
                 await using var writer = new StreamWriter(client, Encoding.UTF8);
                 await writer.WriteLineAsync(command);
-                await writer.FlushAsync(); // <-- CAMBIO AÑADIDO: Forzar el envío del comando.
+                await writer.FlushAsync();
 
                 // 3. Leer la respuesta.
                 using var reader = new StreamReader(client, Encoding.UTF8);
@@ -52,16 +51,18 @@ public class PipeClient
             {
                 Console.WriteLine("ERROR: No se pudo conectar al servidor. ¿Está en ejecución?");
             }
-            catch (IOException ex)
+            catch (IOException ex) when (ex.Message.Contains("closed pipe") || ex.Message.Contains("broken pipe"))
             {
-                Console.WriteLine($"ERROR de comunicación: {ex.Message}");
+                // Este es un error esperado durante la desconexión. El servidor cerró la conexión
+                // después de enviar la respuesta. Lo ignoramos para no confundir al usuario.
+                // La comunicación fue exitosa.
             }
-            catch (Exception ex)
+            catch (Exception ex) when (ex.Message.Contains("closed pipe") || ex.Message.Contains("broken pipe"))
             {
-                Console.WriteLine($"ERROR inesperado: {ex.Message}");
+                
             }
-        }
 
-        Console.WriteLine("Cliente finalizado.");
+            Console.WriteLine("Cliente finalizado.");
+        }
     }
 }
