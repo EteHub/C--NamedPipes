@@ -1,0 +1,15 @@
+C:\Users\ete\CSharpNamedPipe\NamedPipe\bin\Debug\net10.0\NamedPipe.exe
+C:\Users\ete\CSharpNamedPipe\NamedPipe\bin\Debug\net10.0\NamedPipe.deps.json
+C:\Users\ete\CSharpNamedPipe\NamedPipe\bin\Debug\net10.0\NamedPipe.runtimeconfig.json
+C:\Users\ete\CSharpNamedPipe\NamedPipe\bin\Debug\net10.0\NamedPipe.dll
+C:\Users\ete\CSharpNamedPipe\NamedPipe\bin\Debug\net10.0\NamedPipe.pdb
+C:\Users\ete\CSharpNamedPipe\NamedPipe\obj\Debug\net10.0\NamedPipe.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ete\CSharpNamedPipe\NamedPipe\obj\Debug\net10.0\NamedPipe.AssemblyInfoInputs.cache
+C:\Users\ete\CSharpNamedPipe\NamedPipe\obj\Debug\net10.0\NamedPipe.AssemblyInfo.cs
+C:\Users\ete\CSharpNamedPipe\NamedPipe\obj\Debug\net10.0\NamedPipe.csproj.CoreCompileInputs.cache
+C:\Users\ete\CSharpNamedPipe\NamedPipe\obj\Debug\net10.0\NamedPipe.sourcelink.json
+C:\Users\ete\CSharpNamedPipe\NamedPipe\obj\Debug\net10.0\NamedPipe.dll
+C:\Users\ete\CSharpNamedPipe\NamedPipe\obj\Debug\net10.0\refint\NamedPipe.dll
+C:\Users\ete\CSharpNamedPipe\NamedPipe\obj\Debug\net10.0\NamedPipe.pdb
+C:\Users\ete\CSharpNamedPipe\NamedPipe\obj\Debug\net10.0\NamedPipe.genruntimeconfig.cache
+C:\Users\ete\CSharpNamedPipe\NamedPipe\obj\Debug\net10.0\ref\NamedPipe.dll
