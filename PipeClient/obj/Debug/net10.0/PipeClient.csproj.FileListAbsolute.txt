@@ -1,0 +1,15 @@
+C:\Users\ete\CSharpNamedPipe\PipeClient\bin\Debug\net10.0\PipeClient.exe
+C:\Users\ete\CSharpNamedPipe\PipeClient\bin\Debug\net10.0\PipeClient.deps.json
+C:\Users\ete\CSharpNamedPipe\PipeClient\bin\Debug\net10.0\PipeClient.runtimeconfig.json
+C:\Users\ete\CSharpNamedPipe\PipeClient\bin\Debug\net10.0\PipeClient.dll
+C:\Users\ete\CSharpNamedPipe\PipeClient\bin\Debug\net10.0\PipeClient.pdb
+C:\Users\ete\CSharpNamedPipe\PipeClient\obj\Debug\net10.0\PipeClient.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ete\CSharpNamedPipe\PipeClient\obj\Debug\net10.0\PipeClient.AssemblyInfoInputs.cache
+C:\Users\ete\CSharpNamedPipe\PipeClient\obj\Debug\net10.0\PipeClient.AssemblyInfo.cs
+C:\Users\ete\CSharpNamedPipe\PipeClient\obj\Debug\net10.0\PipeClient.csproj.CoreCompileInputs.cache
+C:\Users\ete\CSharpNamedPipe\PipeClient\obj\Debug\net10.0\PipeClient.sourcelink.json
+C:\Users\ete\CSharpNamedPipe\PipeClient\obj\Debug\net10.0\PipeClient.dll
+C:\Users\ete\CSharpNamedPipe\PipeClient\obj\Debug\net10.0\refint\PipeClient.dll
+C:\Users\ete\CSharpNamedPipe\PipeClient\obj\Debug\net10.0\PipeClient.pdb
+C:\Users\ete\CSharpNamedPipe\PipeClient\obj\Debug\net10.0\PipeClient.genruntimeconfig.cache
+C:\Users\ete\CSharpNamedPipe\PipeClient\obj\Debug\net10.0\ref\PipeClient.dll
